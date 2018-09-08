@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should correctly render Greeter 1`] = `
+<div>
+  Hello 
+   in world of typescript!
+</div>
+`;
+
+exports[`should correctly render Greeter with provided name 1`] = `
+<div>
+  Hello 
+  Marcin
+   in world of typescript!
+</div>
+`;
