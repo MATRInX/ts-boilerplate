@@ -7,19 +7,21 @@ import configureStore from './store/configureStore';
 import { addTodo } from './actions/todos';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
+import AppRouter, { history } from './routers/AppRouter';
 
 const store = configureStore();
-store.dispatch(addTodo('testowa'));
-store.dispatch(addTodo('druga testowa'));
+// store.dispatch(addTodo('testowa'));
+// store.dispatch(addTodo('druga testowa'));
 
 const tsx: JSX.Element = (
   <Provider store={store}>
-    <div>
+    {/* <div>
       <HelloWorld />
       <Greeter name={'Marcin'}/>
       <AddTodo />
       <TodoList />
-    </div>
+    </div> */}
+    <AppRouter />
   </Provider>
 )
 

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Todo from '../models/Todo';
 import * as fromTodo from '../reducers/todos';
 import { toggleTodo, ToggleTodoAction } from '../actions/todos';
+import { Link } from 'react-router-dom';
 
 export interface TodoListStoreProps {
   todos: fromTodo.State
@@ -28,11 +29,11 @@ constructor(props: TodoListProps){
 
   render() {
     const { todos, onTodoClick } = this.props;
-    console.log(this.props.todos, Date());
     return (
       <div>
+        <Link to="/add"><h2>Add todos...</h2></Link>
         {
-          this.props.todos ? (
+          this.props.todos.length > 0 ? (
             this.props.todos.map((todoItem: Todo) => 
             <div key={todoItem.id} onClick={() => this.onTodoClick(todoItem.id)}>
               {todoItem.name} <span>{todoItem.done ? 'is DONE' : 'has to be done!'}</span>
@@ -54,5 +55,5 @@ const mapDispatchToProps = (dispatch: Dispatch<ToggleTodoAction>, ownProps: Todo
   onTodoClick: (todoId: number) => dispatch(toggleTodo(todoId))
 });
 
-export default connect<TodoListStoreProps, TodoListDispatchProps, TodoListProps, any>
+export default connect<TodoListStoreProps, TodoListDispatchProps, any, any>
   (mapStateToProps, mapDispatchToProps)(TodoList);

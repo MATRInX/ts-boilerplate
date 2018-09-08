@@ -3,6 +3,7 @@ import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions/todos';
 import { AddTodoAction } from '../actions/todos';
+import { Link } from 'react-router-dom';
 
 // export interface AddTodoProps {
 //   handleSubmit: (name: string) => void
@@ -40,10 +41,13 @@ export class AddTodo extends React.Component<AddTodoProps, AddTodoState>{
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <input type="text" value={this.state.value} onChange={this.onChange}/>
-        <button type="submit">Add todo!</button>
-      </form>
+      <div>
+        <Link to="/"><h1>Todo list!</h1></Link>
+        <form onSubmit={this.onSubmit}>
+          <input type="text" value={this.state.value} onChange={this.onChange}/>
+          <button type="submit">Add todo!</button>
+        </form>
+      </div>
     )
   }
 }
