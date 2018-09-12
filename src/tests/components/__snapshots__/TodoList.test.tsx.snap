@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should correctly render dummy todos list 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/add"
+  >
+    <h2>
+      Add todos...
+    </h2>
+  </Link>
+  <div
+    key="1"
+    onClick={[Function]}
+  >
+    testing1
+     
+    <span>
+      has to be done!
+    </span>
+  </div>
+  <div
+    key="2"
+    onClick={[Function]}
+  >
+    testing2
+     
+    <span>
+      is DONE
+    </span>
+  </div>
+</div>
+`;
+
+exports[`should correctly render empty todolist 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/add"
+  >
+    <h2>
+      Add todos...
+    </h2>
+  </Link>
+  <p>
+    There is no items!
+  </p>
+</div>
+`;

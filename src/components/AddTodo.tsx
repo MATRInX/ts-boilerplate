@@ -5,16 +5,17 @@ import { addTodo } from '../actions/todos';
 import { AddTodoAction } from '../actions/todos';
 import { Link } from 'react-router-dom';
 
-// export interface AddTodoProps {
-//   handleSubmit: (name: string) => void
-// };
 type AddTodoStateProps = null;
 
 interface AddTodoDispatchProps {
   handleSubmit: (name: string) => void
 }
 
-type AddTodoProps = AddTodoStateProps & AddTodoDispatchProps;
+interface AddTodoExtraProps {
+  defaultValue?: string
+}
+
+type AddTodoProps = AddTodoStateProps & AddTodoDispatchProps & AddTodoExtraProps;
 
 export interface AddTodoState {
   value: string
@@ -23,7 +24,7 @@ export interface AddTodoState {
 export class AddTodo extends React.Component<AddTodoProps, AddTodoState>{
   constructor(props: AddTodoProps){
     super(props);
-    this.state = { value: ''};
+    this.state = { value: this.props.defaultValue ? this.props.defaultValue : ''};
   }
 
   onChange = (e: FormEvent<EventTarget>):void => {

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should correctly render AddTodo component 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/"
+  >
+    <h1>
+      Todo list!
+    </h1>
+  </Link>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      type="text"
+      value="Default value"
+    />
+    <button
+      type="submit"
+    >
+      Add todo!
+    </button>
+  </form>
+</div>
+`;

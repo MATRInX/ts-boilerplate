@@ -4,7 +4,8 @@ let nextId: number = 0;
 
 export enum ActionTypes {
     ADD_TODO = '[todos] ADD_TODO',
-    TOGGLE_TODO = '[todos] TOGGLE_TODO'
+    TOGGLE_TODO = '[todos] TOGGLE_TODO',
+    INIT = '@@INIT'
 };
 
 export interface AddTodoAction {
@@ -19,6 +20,10 @@ export interface ToggleTodoAction {
   payload: {
     todoId: number
   }
+};
+
+export interface InitAction {
+  type: ActionTypes.INIT
 };
 
 // ADD_TODO
@@ -45,4 +50,4 @@ export const toggleTodo = (todoId: number): ToggleTodoAction => {
   }
 };
 
-export type Action = AddTodoAction | ToggleTodoAction;
+export type Action = AddTodoAction | ToggleTodoAction | InitAction;
